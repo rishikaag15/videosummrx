@@ -7,7 +7,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<h1>YouTube Transcript Summarizer</h1>
-				<pre><b>----------------------------</b></pre>
+				<pre><div class="line"></div></pre>
 				<BackendAPI />
 			</header>
 			{/* <footer className="footer">

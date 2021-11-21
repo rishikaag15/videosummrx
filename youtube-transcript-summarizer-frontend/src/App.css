@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 
 .App {
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,13 +8,14 @@
 }
 
 .App-header {
-  background-color: #071124;
+  background-color: #e0e5ec;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,229,236,1) 100%);
 }
 
 .App-link {
@@ -21,9 +23,14 @@
 }
 
 h1 {
-  font-size: 20px;
-  /* text-decoration: underline; */
+  font-size: 21px;
+  font-family: 'Overlock', cursive;
 }
+
+.line{
+  width: 90vw;
+  border-bottom: 1px solid black;
+  }
 
 pre {
   margin-top: 0px;
@@ -36,6 +43,7 @@ p {
 }
 
 label {
+  font-weight: bold;
   font-size: 14px;
 }
 
@@ -45,15 +53,17 @@ label {
 
 .input-1 {
   margin-top: 8px;
-  margin-left: 2vw;
+  margin-left: 1.2vw;
   width: 48vh;
   height: 1.2rem;
   color: #282c34;
   font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
 .submit-1 {
-  margin-top: 8px;
+  margin-top: 12px;
   margin-left: 1.6vw;
   font-size: 14px;
   padding: 4px;
@@ -69,7 +79,7 @@ label {
 }
 
 .submit-1:active {
-  background-color: dimgray;
+  background-color: blueviolet;
   color: whitesmoke;
 }
 
@@ -80,17 +90,22 @@ label {
   padding: 4px;
   margin-left: 4px;
   margin-right: 4px;
-  border: 2px solid #282c34;
+  border: 1px solid #282c34;
   border-radius: 8px;
   color: #282c34;
   background-color: whitesmoke;
+}
+
+.btn-1:active {
+  background-color: #282c34;
+  color: whitesmoke;
 }
 
 
 .arrow {
   margin-top: 4px;
   margin-right: 4px;
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 4px;
@@ -102,9 +117,9 @@ label {
 }
 
 .tab-list {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid black;
   width: 89vw;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   padding-left: 0;
 }
 
@@ -117,25 +132,27 @@ label {
 }
 
 .tab-list-active {
-  background-color: white;
-  color: #282c34;
+  background-color: #282c34;
+  color: white;
   font-weight: bolder;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
 .tab-content-1 {
-  width: 78vw;
+  width: 82vw;
   text-align: justify;
   word-wrap: break-word;
   text-justify: inter-word;
   display: inline-block;
   justify-content: baseline;
-  padding: 1px 1px;
+  padding: 1px 1.2vh;
+  border-radius: 8px;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
 .tab-content {
-  width: 78vw;
+  width: 82vw;
   height: 260px;
   font-size: 12px;
   text-align: justify;
@@ -144,7 +161,9 @@ label {
   overflow-y: scroll;
   overflow-x: visible;
   display: inline-block;
-  padding: 1px 1px;
+  padding: 1px 1.2vh;
+  border-radius: 8px;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
 
 .footer {
@@ -167,7 +186,7 @@ label {
 
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #fdd;
+  border: 4px solid black;
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -203,6 +222,7 @@ label {
   border-radius: 12px;
   color: #282c34;
   background-color: whitesmoke;
+  border: 1px solid black;
   
 	font-family: sans-serif;
 	text-decoration: none;
