@@ -1,5 +1,5 @@
 """
-Project Name: YouTube Transcript Summarizer
+Project Name: Video Summarizer
 YouTube Transcript Summarizer API
 """
 
@@ -56,7 +56,7 @@ def respond():
         data['message'] = "Failed"
         data['error'] = "no video id found, please provide valid video id."
 
-    # Check if the user entered a invalid instead video_id
+    # Check if the user entered a invalid inside video_id
     elif str(video_id) == "False":
         data['message'] = "Failed"
         data['error'] = "video id invalid, please provide valid video id."
