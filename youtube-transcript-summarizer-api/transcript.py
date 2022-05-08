@@ -1,5 +1,7 @@
+from itertools import tee
+import os
 from youtube_transcript_api import YouTubeTranscriptApi
-
+from audiototext import download, mp3towav, DESTINATION_WAV_PATH, recognize_from_file
 
 def get_transcript_of_yt_video(v_id):
 
@@ -31,6 +33,12 @@ def get_transcript_of_yt_video(v_id):
                 return final_transcript
 
     except:
+        tempaudiopath = 'C:\\Projects\\videosummrx\\youtube-transcript-summarizer-api\\tempaudios'
+        try:
+            download(f'https://www.youtube.com/watch?v={v_id}',tempaudiopath)
+        except Exception as err:
+            print("Error: ",err)
+        mp3towav('C:\\Projects\\videosummrx\\youtube-transcript-summarizer-api\\tempaudios\\temp.mp3')
 
-        final_transcript = "0"
+        final_transcript = recognize_from_file(DESTINATION_WAV_PATH)
         return final_transcript
