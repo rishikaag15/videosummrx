@@ -46,8 +46,6 @@ class BackendAPI extends React.Component {
         (result) => {
           //callback
           if (result.data.message === "Success") {
-            console.log(result.data)
-
             this.setState({
               isLoaded: true,
               isLoading: false,

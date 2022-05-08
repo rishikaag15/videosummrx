@@ -1,7 +1,9 @@
 import json
 from flask import Blueprint
 from flask import Response, request, render_template, redirect, url_for, jsonify
+import requests
 from model import nlp_model, get_summary
+  
 
 views = Blueprint(__name__, "views")
 
@@ -76,10 +78,9 @@ def summarize_text():
     # Retrieve the text from body
     json_body = json.loads(request.data.decode())
     text_inp = json_body.get('text')
-#     text_inp = '''
-#     Miss Brill' is the story of an old woman told brilliantly and realistically, balancing thoughts and emotions that sustain her late solitary life amidst all the bustle of modern life. Miss Brill is a regular visitor on Sundays to the Jardins Publiques (the Public Gardens) of a small French suburb where she sits and watches all sorts of people come and go. She listens to the band playing, loves to watch people and guess what keeps them going, and enjoys contemplating the world as a great stage upon which actors perform. She finds herself to be another actor among the so many she sees, or at least herself as 'part of the performance after all.' One Sunday Miss Brill puts on her fur and goes to the Public Gardens as usual. The evening ends with her sudden realization that she is old and lonely, a realization brought to her by a conversation she overhears between a boy and a girl, presumably lovers, who comment on her unwelcome presence in their vicinity.
-# Miss Brill is sad and depressed as she returns home, not stopping by as usual to buy her Sunday delicacy, a slice of honey-cake. She retires to her dark room, puts the fur back into the box and imagines that she has heard something cry.
-#     '''
+    response = requests.post('http://bark.phon.ioc.ee/punctuator', data={'text':text_inp})
+    if response.status_code == 200:
+        text_inp = response.content.decode()
     body, data = {}, {}
     result = get_summary(text_inp, 0)
     if result == "0":
